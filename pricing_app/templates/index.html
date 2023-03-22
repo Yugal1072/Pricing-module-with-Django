@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pricing App</title>
+</head>
+<body>
+    <h1>Pricing App</h1>
+    <form method="POST" action="{% url 'calculate_invoice' %}">
+        {% csrf_token %}
+        <label for="distance">Distance traveled (in km):</label>
+        <input type="number" id="distance" name="distance"><br><br>
+        <label for="time">Time traveled (in hours):</label>
+        <input type="number" id="time" name="time"><br><br>
+        <input type="submit" value="Calculate invoice">
+    </form>
+    <br><br>
+    <table>
+        <thead>
+            {% comment %} <tr>
+                <th>Name</th>
+                <th>Distance Upper Limit</th>
+                <th>Base Price</th>
+                <th>Additional Price per Km</th>
+                <th>Time Upper Limit</th>
+                <th>Multiplier Factor</th>
+            </tr> {% endcomment %}
+        </thead>
+    </table>
+</body>
+</html>
